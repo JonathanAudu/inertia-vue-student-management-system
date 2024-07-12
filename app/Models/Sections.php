@@ -18,6 +18,6 @@ class Sections extends Model
 
     public function students()
     {
-        return $this->hasMany(Students::class);
+        return $this->hasMany(Students::class, 'section_id');
     }
 }

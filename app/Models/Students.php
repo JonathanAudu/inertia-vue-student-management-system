@@ -11,6 +11,8 @@ class Students extends Model
 
     protected $fillable = ['name', 'email', 'class_id','section_id'];
 
+    protected $with = ['classes', 'sections'];
+
     public function classes()
     {
         return $this->belongsTo(Classes::class, 'class_id');
@@ -18,6 +20,6 @@ class Students extends Model
 
     public function sections()
     {
-        return $this->belongsTo(Sections::class);
+        return $this->belongsTo(Sections::class, 'section_id');
     }
 }

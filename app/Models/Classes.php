@@ -13,7 +13,7 @@ class Classes extends Model
 
     public function sections()
     {
-        return $this->hasMany(Sections::class);
+        return $this->hasMany(Sections::class, 'class_id');
     }
 
     public function students()
